@@ -1,15 +1,11 @@
 class App {
     public static void main(String[] args) {
-        var family = "Targaryen";
 
         // BEGIN (write your solution here)
-        var countOfMyBrothers = 2;
-        System.out.println(countOfMyBrothers);
+        var firstNumber = 11;
+        var secondNumber = -100;
+        var sum = firstNumber + secondNumber;
+        System.out.println(sum);
         // END
-
-        System.out.print(family);
-        System.out.print(" and ");
-        System.out.print(pet);
     }
-
 }
