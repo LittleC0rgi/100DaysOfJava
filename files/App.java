@@ -1,11 +1,12 @@
 public class App {
     public static void main(String[] args) {
-        var one = "Naharis";
-        var two = "Mormont";
-        var three = "Sand";
+       var name = "heXlEt";
 
-        // BEGIN (write your solution here)
-        System.out.println(one.charAt(2) + " " + two.charAt(1) + " " + three.charAt(3) + " " + two.charAt(4) + " " + two.charAt(2) );
+        // BEGIN (write your solution here
+        var result =
+    name.substring(0, 1).toUpperCase() +
+    name.substring(1).toLowerCase();
+        System.out.println(result);
         // END
     }
 }
