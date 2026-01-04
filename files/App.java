@@ -1,9 +1,5 @@
-public class App {
-    public static void main(String[] args) {
-        App.gogo();
-    }
-
-    static void gogo() {
-        System.out.println("It works!");
+class App {
+    public static String sayHurrayThreeTimes() {
+        return "hurray! hurray! hurray!";
     }
 }
