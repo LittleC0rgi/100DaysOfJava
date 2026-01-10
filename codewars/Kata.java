@@ -22,4 +22,15 @@ public class Kata {
                 return 0;
         }
     }
+
+    static String removeExclamationMarks(String s) {
+        var res = "";
+        for (char c : s.toCharArray()) {
+            if (c != '!') {
+                res += c;
+            }
+        }
+        return res;
+
+    }
 }
