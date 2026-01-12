@@ -1,16 +1,13 @@
-public class App {
-
-    public static String[] getWeekends(String format) {
+class App {
+    public static void swap(int[] numbers) {
         // BEGIN (write your solution here)
-        switch (format) {
-            case "short":
-                String[] weekendShort = { "sat", "sun" };
-                return weekendShort;
-
-            default:
-                String[] weekendFull = { "saturday", "sunday" };
-                return weekendFull;
+        if (numbers.length < 2) {
+            return;
         }
+
+        int temp = numbers[0];
+        numbers[0] = numbers[numbers.length - 1];
+        numbers[numbers.length - 1] = temp;
         // END
     }
 }
