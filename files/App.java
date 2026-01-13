@@ -1,13 +1,19 @@
 class App {
-    public static void swap(int[] numbers) {
-        // BEGIN (write your solution here)
-        if (numbers.length < 2) {
-            return;
-        }
-
-        int temp = numbers[0];
-        numbers[0] = numbers[numbers.length - 1];
-        numbers[numbers.length - 1] = temp;
-        // END
+  public static int mult(int[] numbers) {
+    if (numbers.length == 0) {
+      return 0;
     }
+
+    int sum = 1;
+    for (int num : numbers) {
+      sum *= num;
+    }
+    return sum;
+  }
+
+  public static void main(String[] args) {
+    int[] numbers1 = { 1, 4, 3, 4, 5 };
+    var res = App.mult(numbers1); // 240
+    System.err.println(res);
+  }
 }
