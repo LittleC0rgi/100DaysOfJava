@@ -1,40 +1,40 @@
 import java.util.Arrays;
 
 class App {
-  public static int[] getSameParity(int[] numbers) {
-    if (numbers.length == 0) {
-      return numbers;
-    }
-
-    int firstNumberParity = Math.abs(numbers[0]) % 2;
-    int[] tempArrNumbers = new int[numbers.length];
+  public static int getTotalAmount(String[] banknotes, String currency) {
+    String[] tempArr = new String[banknotes.length];
     int count = 0;
 
-    for (int number : numbers) {
-      if (Math.abs(number) % 2 == firstNumberParity) {
-        tempArrNumbers[count] = number;
+    for (int i = 0; i < banknotes.length; i++) {
+      if (banknotes[i].contains(currency)) {
+        tempArr[count] = banknotes[i].replace(currency, "").trim();
         count++;
       }
     }
 
-    return Arrays.copyOfRange(tempArrNumbers, 0, count);
+    System.out.println(Arrays.toString(tempArr)); // изменено здесь
+
+    int res = 0;
+    for (String string : tempArr) {
+      if (string == null) {
+        break;
+      }
+      res += Integer.parseInt(string);
+    }
+
+    System.out.println(res);
+
+    return res;
   }
 
   public static void main(String[] args) {
-    // Тестовые примеры
-    int[] numbers1 = {};
-    System.out.println(Arrays.toString(getSameParity(numbers1))); // []
+    String[] banknotes1 = { "eur 10", "usd 1", "usd 10", "rub 50", "usd 5" };
+    App.getTotalAmount(banknotes1, "usd"); // 16
 
-    int[] numbers2 = { 1, 2, 3 };
-    System.out.println(Arrays.toString(getSameParity(numbers2))); // [1, 3]
+    String[] banknotes2 = { "eur 10", "usd 1", "eur 5", "rub 100", "eur 20", "eur 100", "rub 200" };
+    App.getTotalAmount(banknotes2, "eur"); // 135
 
-    int[] numbers3 = { 1, 2, 8 };
-    System.out.println(Arrays.toString(getSameParity(numbers3))); // [1]
-
-    int[] numbers4 = { 2, 2, 8 };
-    System.out.println(Arrays.toString(getSameParity(numbers4))); // [2, 2, 8]
-
-    int[] numbers5 = { -3, 2, 1 };
-    System.out.println(Arrays.toString(getSameParity(numbers5))); // [-3, 1]
+    String[] banknotes3 = { "eur 10", "rub 50", "eur 5", "rub 10", "rub 10", "eur 100", "rub 200" };
+    App.getTotalAmount(banknotes3, "rub"); // 270
   }
 }
