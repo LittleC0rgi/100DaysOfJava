@@ -1,26 +1,29 @@
 class App {
-  public static String getSuperSeriesWinner(int[][] scores) {
-    final int CanadaScoreIndex = 0;
-    final int UssrScoreIndex = 1;
+  public static String buildDefinitionList(String[][] items) {
 
-    int CanadaScore = 0;
-    int UssrScore = 0;
-
-    for (int[] score : scores) {
-      if (score[CanadaScoreIndex] > score[UssrScoreIndex]) {
-        CanadaScore++;
-      } else if (score[CanadaScoreIndex] < score[UssrScoreIndex]) {
-        UssrScore++;
-      }
+    if (items.length == 0) {
+      return "";
     }
 
-    if (CanadaScore > UssrScore) {
-      return "canada";
-    } else if (CanadaScore < UssrScore) {
-      return "ussr";
-    } else {
-      return "draw";
+    final int titleIndex = 0;
+    final int descrIndex = 1;
+
+    var result = new StringBuilder();
+    result.append("<dl>");
+
+    for (String[] string : items) {
+      result.append("<dt>");
+      result.append(string[titleIndex]);
+      result.append("</dt>");
+
+      result.append("<dd>");
+      result.append(string[descrIndex]);
+      result.append("</dd>");
     }
+
+    result.append("</dl>");
+
+    return result.toString();
   }
 
   public static void main(String[] args) {
