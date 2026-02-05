@@ -17,8 +17,8 @@
    - Пройти тему "Java: Введение в ООП" на hexlet ✅
 2. Модуль
    - Java: Классы ✅
-   - Java: Списки ⏳
-   - Java: Maps
+   - Java: Списки ✅
+   - Java: Maps ⏳
    - Java: Функции
    - Java: Дженерики
    - Java: Стримы
